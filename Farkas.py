@@ -24,14 +24,22 @@ def feladat16(lista):
 
 def feladat20(lista):
     print("20)    Melyik a Szegedi kistérség legkisebb területű települése(i)?")
+    vissza = list(filter(lambda t: t.kister=="Szegedi", lista))
+    a = list(filter(lambda t: t.ter == min(map(lambda t: t.ter, vissza)) , vissza))
+    for sor in a: print(sor.nev)
     print()
 
 def feladat24(lista):
     print("24)    Melyik a Szentesi kistérség legnépesebb települése(i)?")
+    vissza = list(filter(lambda t: t.kister=="Szentesi", lista))
+    a = list(filter(lambda t: t.nep == max(map(lambda t: t.nep, vissza)) , vissza))
+    for sor in a: print(sor.nev)
     print()
 
 def feladat28(lista):
     print("28)    Írja ki a Kisteleki kistérség településeinek népsűrűségét!")
+    a = list(filter(lambda t: t.kister == "Kisteleki", lista))
+    for sor in a : print(f"{sor.nev}: {sor.nep/(sor.ter/100)} fő/km2")
     print()
 
 def feladat32(lista):
