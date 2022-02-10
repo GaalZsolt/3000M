@@ -48,6 +48,33 @@ def feladat21(lista):
             minsor.nev = t.nev
     print(minsor.nev)
 
+def feladat25(lista):
+    print("25)    Írja ki a Makói kistérség településeinek népsűrűségét!")
+    for t in lista:
+        if t.kister == "Makói":
+            print(str(t.nev) + " - " + str(t.nep/(t.ter/100)) + " fő/km^2")
+
+def feladat29(lista):
+    print("29)    Igaz-e, hogy minden Makói kistérségű település lélekszáma nagyobb, mint 1000?")
+    igaze = True
+    index = 0
+    while igaze and index < len(lista):
+        if lista[index].nep < 1000:
+            igaze = False
+        index+=1
+    print(igaze)
+
+
+
+
+
+
+        
+    
+
+
+
+
 
 """template
 
@@ -70,3 +97,7 @@ feladat13(Telepules.lista)
 feladat17(Telepules.lista)
 
 feladat21(Telepules.lista)
+
+feladat25(Telepules.lista)
+
+feladat29(Telepules.lista)
